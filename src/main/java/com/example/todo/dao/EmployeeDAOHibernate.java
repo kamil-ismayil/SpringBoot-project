@@ -3,6 +3,7 @@ package com.example.todo.dao;
 import com.example.todo.entities.Employee;
 import com.example.todo.entities.Login;
 import org.hibernate.Session;
+import org.springframework.data.repository.RepositoryDefinition;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
