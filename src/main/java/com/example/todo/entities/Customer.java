@@ -12,7 +12,7 @@ public class Customer {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "company-name")
+    @Column(name = "company_name")
     private String companyName;
 
     @Column(name = "address")
@@ -24,8 +24,11 @@ public class Customer {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "orgNumber")
+    @Column(name = "org_number")
     private String orgNumber;
+
+    @Column(name = "zip_code")
+    private String zipCode;
 
     public Integer getId() {
         return id;
@@ -73,6 +76,14 @@ public class Customer {
 
     public void setOrgNumber(String orgNumber) {
         this.orgNumber = orgNumber;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     @Override
