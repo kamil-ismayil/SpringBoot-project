@@ -4,10 +4,7 @@ import com.example.todo.entities.Employee;
 import com.example.todo.input_forms.LoginForm;
 import com.example.todo.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,13 +19,17 @@ public class TodoRestController {
         this.restService = restService;
     }
 
+    @CrossOrigin
     @GetMapping("/login")
     public Employee login(@RequestBody LoginForm loginForm){
+
         return restService.loginEmployee(loginForm);
     }
 
+    @CrossOrigin
     @GetMapping("/employees")
     public List<Employee> allEmployees(){
         return restService.allEmployees();
     }
+
 }

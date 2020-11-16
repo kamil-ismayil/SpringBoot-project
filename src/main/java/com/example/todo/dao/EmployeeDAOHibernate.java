@@ -41,8 +41,6 @@ public class EmployeeDAOHibernate implements EmployeeDAO{
         Query theQuery = currentSession.createQuery("from Employee");
         List<Employee> allEmployees = theQuery.getResultList();
 
-
-
         return allEmployees;
     }
 }
