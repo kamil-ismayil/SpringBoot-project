@@ -23,7 +23,7 @@ public class EmployeeDAOHibernate implements EmployeeDAO{
     @Override
     public Employee findEmployeeById(int id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query theQuery = currentSession.createQuery("from Employees where id=:id");
+        Query theQuery = currentSession.createQuery("from Employee where id=:id");
         theQuery.setParameter("id", id);
 
         return (Employee) theQuery.getSingleResult();
