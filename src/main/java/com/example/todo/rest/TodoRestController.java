@@ -20,9 +20,8 @@ public class TodoRestController {
     }
 
     @CrossOrigin
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Employee login(@RequestBody LoginForm loginForm){
-
         return restService.loginEmployee(loginForm);
     }
 
