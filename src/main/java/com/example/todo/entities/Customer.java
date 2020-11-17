@@ -2,10 +2,11 @@ package com.example.todo.entities;
 
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Customers")
-public class Customer {
+public class Customer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
