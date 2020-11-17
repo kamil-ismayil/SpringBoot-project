@@ -1,6 +1,8 @@
 package com.example.todo.rest;
 
+import com.example.todo.entities.Customer;
 import com.example.todo.entities.Employee;
+import com.example.todo.input_forms.CustomerSearchForm;
 import com.example.todo.input_forms.LoginForm;
 import com.example.todo.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +33,14 @@ public class TodoRestController {
         return restService.allEmployees();
     }
 
+    @CrossOrigin
+    @GetMapping("/customers")
+    public List<Customer> allCustomers(){ return restService.allCustomers(); }
+
+
+    @CrossOrigin
+    @GetMapping("/searchcustomers")
+    public Customer searchCustomers(@RequestBody CustomerSearchForm customerSearchForm){
+        return restService.findCustomerByName(customerSearchForm);
+    }
 }
