@@ -21,7 +21,7 @@ public class CustomerDAOHibernate implements CustomerDAO{
     @Override
     public Customer findCustomerByName(CustomerSearchForm customerSearchForm) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query theQuery = currentSession.createQuery("from Employee where company_name=:name");
+        Query theQuery = currentSession.createQuery("from Customer where company_name=:name");
         theQuery.setParameter("name",customerSearchForm.getName());
 
         return (Customer) theQuery.getSingleResult();
