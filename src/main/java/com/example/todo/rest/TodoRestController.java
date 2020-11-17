@@ -39,7 +39,7 @@ public class TodoRestController {
 
 
     @CrossOrigin
-    @GetMapping("/searchcustomers")
+    @PostMapping("/searchcustomers")
     public Customer searchCustomers(@RequestBody CustomerSearchForm customerSearchForm){
         return restService.findCustomerByName(customerSearchForm);
     }
