@@ -1,6 +1,5 @@
 package com.example.todo.input_forms;
 
-
 public class CustomerSearchForm {
     private String name;
 

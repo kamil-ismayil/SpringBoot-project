@@ -2,12 +2,15 @@ package com.example.todo.rest;
 
 import com.example.todo.entities.Customer;
 import com.example.todo.entities.Employee;
+import com.example.todo.entities.Training;
 import com.example.todo.input_forms.CustomerSearchForm;
 import com.example.todo.input_forms.LoginForm;
+import com.example.todo.input_forms.TrainingSearchForm;
 import com.example.todo.service.RestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Column;
 import java.util.List;
 
 @RestController
@@ -43,4 +46,17 @@ public class TodoRestController {
     public Customer searchCustomers(@RequestBody CustomerSearchForm customerSearchForm){
         return restService.findCustomerByName(customerSearchForm);
     }
+
+    @CrossOrigin
+    @GetMapping("/trainings")
+    public List<Training> allTrainings(){
+        return restService.allTrainings();
+    }
+
+    @CrossOrigin
+    @PostMapping("/searchtrainings")
+    public List<Training> searchTrainings(@RequestBody TrainingSearchForm trainingSearchForm){
+        return restService.findTrainingByDescription(trainingSearchForm);
+    }
+
 }
